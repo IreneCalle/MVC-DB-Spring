@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<title>Error</title>
+</head>
+<body>
+<div class="text-center">
+
+<h2>Error</h2>
+<br>
+ <img th:src="@{/images/error.png}" id="gato" height=150 width=150/>
+<br>
+<h4>Vaya... se ha producido un error.</h4>
+<h4>Vuelve a la pagina anterior y asegurate de que los campos son correctos.</h4>
+<h4>Si no te has registrado revisa tus credenciales.</h4>
+<h4>Gracias :)</h4>
+
+<h4> <a  th:href="@{/mascotas}">Volver a mascotas</a></h4>
+<h4> <a  th:href="@{/login}">Volver a registro</a></h4>
+
+
+<div th:if="${mensaje}">
+
+</div>
+<table>
+    <tr>
+        <td>Date</td>
+        <td th:text="${timestamp}"/>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td th:text="${path}"/>
+    </tr>
+    <tr>
+        <td>Error</td>
+        <td th:text="${error}"/>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td th:text="${status}"/>
+    </tr>
+    <tr>
+        <td>Message</td>
+        <td th:text="${message}"/>
+    </tr>
+    <tr>
+        <td>Exception</td>
+        <td th:text="${exception}"/>
+    </tr>
+    <tr>
+        <td>Trace</td>
+        <td>
+            <pre th:text="${trace}"/>
+        </td>
+    </tr>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
